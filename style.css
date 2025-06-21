@@ -44,7 +44,7 @@ button:hover {
 #datetime-box {
   position: fixed;
   top: 20px;
-  left: 70px; /* đẩy lệch sang phải tí để không đè nút nhạc */
+  left: 20px; /* đẩy lệch sang phải tí để không đè nút nhạc */
   color: white;
   font-family: 'Roboto Mono', monospace;
   z-index: 999;
