@@ -10,6 +10,9 @@ body {
   height: 100vh;
   margin: 0;
 }
+.content {
+  text-align: center;
+}
 
 h1 {
   color: #ffffff;
