@@ -29,7 +29,7 @@ button {
   font-weight: 300;
   background-color: transparent;
   color: white;
-  border: 1px solid white;
+  border: 0.5px solid white;
   border-radius: 0px;
   cursor: pointer;
   transition: all 0.3s ease;
