@@ -6,10 +6,10 @@ let isPlaying = false;
 btn.addEventListener('click', () => {
   if (isPlaying) {
     audio.pause();
-    btn.textContent = '🔈';
+    btn.textContent = '🎵';
   } else {
     audio.play();
-    btn.textContent = '🔊';
+    btn.textContent = '🎶';
   }
   isPlaying = !isPlaying;
 });
