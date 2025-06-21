@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       if (isPlaying) {
         audio.pause();
-        btn.textContent = '🔈';
+        btn.textContent = '🎵';
       } else {
         await audio.play();
-        btn.textContent = '🔊';
+        btn.textContent = '🎶';
       }
       isPlaying = !isPlaying;
     } catch (e) {
