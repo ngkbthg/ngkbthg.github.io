@@ -41,7 +41,7 @@ button:hover {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-.my-gif {
+my-gif {
   width: 180px;
-  height: auto;  /* để giữ đúng tỉ lệ */
+  height: auto;  
 }
