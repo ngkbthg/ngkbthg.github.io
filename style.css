@@ -53,13 +53,13 @@ button:hover {
 
 #date {
   font-size: 20px;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 #clock {
   font-size: 36px;
   font-weight: 300;
-  opacity: 0.9;
+  opacity: 1;
   margin-top: 2px;
 }
 
