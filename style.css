@@ -1,7 +1,8 @@
 body {
   background-color: #000000;
   color: #ffffff;
-  font-family: roboto-mono;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300
   text-align: center;
   padding-top: 100px;
 }
