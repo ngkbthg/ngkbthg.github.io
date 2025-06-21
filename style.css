@@ -41,6 +41,28 @@ button:hover {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+#datetime-box {
+  position: fixed;
+  top: 20px;
+  left: 70px; /* đẩy lệch sang phải tí để không đè nút nhạc */
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+  z-index: 999;
+  text-align: left;
+}
+
+#date {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+#clock {
+  font-size: 32px;
+  font-weight: 300;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
 my-gif {
   width: 200px;
   height: 200px;  
