@@ -3,8 +3,12 @@ body {
   color: #ffffff;
   font-family: 'Roboto Mono', monospace;
   font-weight: 300;
-  text-align: center;
-  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 h1 {
