@@ -43,9 +43,8 @@ const bgBtn = document.getElementById('toggle-bg');
 const video = document.getElementById('bg-video');
 
 const videos = [
-  "bg1.mp4",
-  "bg2.mp4",
-  "bg3.mp4"
+  "bg.mp4",
+  "bg2.mp4"
 ];
 
 let bgIndex = 0;
