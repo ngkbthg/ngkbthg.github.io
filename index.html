@@ -6,6 +6,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+ <iframe
+  id="yt-playlist"
+  width="0"
+  height="0"
+  src="https://www.youtube.com/embed/videoseries?list=PLsnJOHsVvrji_YI-PbuT-eYBQHOaapriV&autoplay=1&loop=1&playlist=PLsnJOHsVvrji_YI-PbuT-eYBQHOaapriV"
+  frameborder="0"
+  allow="autoplay"
+  allowfullscreen
+  style="position:absolute; left:-9999px;">
+ </iframe>
  <div id="datetime-box">
    <div id="date"></div>
    <div id="clock"></div>
@@ -19,16 +29,19 @@
   <p>Bottom text 💥💥</p>
   <script src="script.js" defer></script>
  </div>
- <audio id="bg-music" src="music.mp3" loop></audio>
+ <!--<audio id="bg-music" src="music.mp3" loop></audio>
 
  <button id="toggle-music" style="position: fixed; top: 20px; right: 20px;">
    🎵
- </button>
+ </button>-->
  <button id="toggle-bg" style="position: fixed; top: 20px; right: 100px;">
    🎨
  </button>
  <button onclick="alert('m gay')" style="position: fixed; top: 20px; right: 180px;">
    💬
+ </button>
+ <button onclick="document.getElementById('yt-playlist').src += ''" style="position: fixed; top: 20px; right: 20px;">
+   🎵
  </button>
 
 </body>
