@@ -77,3 +77,25 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Không thể phát video:", err);
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("bg-music");
+  const btn = document.getElementById("music-btn");
+
+  const totalTracks = 40;
+  let isPlaying = false;
+
+  btn.addEventListener("click", () => {
+    if (isPlaying) {
+      audio.pause();
+      btn.innerText = "🎵";
+    } else {
+      const randomIndex = Math.floor(Math.random() * totalTracks) + 1;
+      audio.src = `music/${randomIndex}.mp3`;
+      audio.play();
+      btn.innerText = "🎶";
+    }
+
+    isPlaying = !isPlaying;
+  });
+});
