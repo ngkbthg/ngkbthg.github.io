@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const musicBtn = document.getElementById("play-music-btn");
   const ytIframe = document.getElementById("yt-playlist");
 
-  const totalVideos = 40; 
+  const totalVideos = 39; 
 
   musicBtn.addEventListener("click", () => {
     const randomIndex = Math.floor(Math.random() * totalVideos);
@@ -89,6 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ytIframe.src = `https://www.youtube.com/embed/videoseries?list=${playlistId}&index=${randomIndex}&autoplay=1&loop=1&playlist=${playlistId}`;
     
-    musicBtn.innerText = "Đang phát 🎶";
+    musicBtn.innerText = "🎶";
   });
 });
