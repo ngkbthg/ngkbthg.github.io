@@ -28,17 +28,22 @@ button {
   font-family: 'Roboto Mono', monospace;
   font-weight: 300;
   background-color: transparent;
-  color: #10561f;
-  border: 0.5px solid rgba(16, 86, 31, 1);
+  color: #ffffff;
+  border: 0.5px solid rgba(255, 255, 255, 1);
   border-radius: 0px;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: none;
+  text-shadow: 
+    -1px -1px 0 black,  
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
 }
 
 button:hover {
-  background-color: rgba(16, 86, 31, 0.2);
-  border-color: rgba(16, 86, 31, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 #datetime-box {
