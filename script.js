@@ -1,4 +1,3 @@
-alert("hello bn");
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById('toggle-music');
   const audio = document.getElementById('bg-music');
