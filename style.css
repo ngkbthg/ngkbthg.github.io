@@ -34,11 +34,6 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: none;
-  text-shadow: 
-    -1px -1px 0 black,  
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black;
 }
 
 button:hover {
