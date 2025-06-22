@@ -58,3 +58,22 @@ bgBtn.addEventListener('click', () => {
     console.error("Không thể play video:", err);
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("bg-video");
+  const source = video.querySelector("source");
+
+  const backgrounds = [
+    "bg/bg1.mp4",
+    "bg/bg2.mp4",
+    "bg/bg3.mp4"
+  ];
+
+  const randomIndex = Math.floor(Math.random() * backgrounds.length);
+  const selectedVideo = backgrounds[randomIndex];
+
+  source.src = selectedVideo;
+  video.load();
+  video.play().catch(err => {
+    console.error("Không thể phát video:", err);
+  });
+});
