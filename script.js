@@ -41,12 +41,12 @@ setInterval(updateClock, 1000);
 updateClock(); 
 const bgVideo = document.getElementById('bg');
 const source = bgVideo.querySelector('source');
-const backgrounds = ['bg/bg1.mp4', 'bg/bg2.mp4'];
+const backgrounds = ['bg/bg.mp4', 'bg/bg2.mp4'];
 let bgIndex = 0;
 
 document.getElementById('bg-toggle').addEventListener('click', () => {
   bgIndex = (bgIndex + 1) % backgrounds.length;
   source.src = backgrounds[bgIndex];
-  bgVideo.load(); // load lại source mới
-  bgVideo.play(); // tiếp tục phát
+  bgVideo.load(); 
+  bgVideo.play(); 
 });
