@@ -63,9 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const source = video.querySelector("source");
 
   const backgrounds = [
+    "bg/bg.mp4",
     "bg/bg1.mp4",
-    "bg/bg2.mp4",
-    "bg/bg3.mp4"
+    "bg/bg2.mp4"
   ];
 
   const randomIndex = Math.floor(Math.random() * backgrounds.length);
