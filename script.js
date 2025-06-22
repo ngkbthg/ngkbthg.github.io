@@ -39,14 +39,22 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 updateClock(); 
-const bgVideo = document.getElementById('bg');
-const source = bgVideo.querySelector('source');
-const backgrounds = ['bg/bg.mp4', 'bg/bg2.mp4'];
+const bgBtn = document.getElementById('toggle-bg');
+const video = document.getElementById('bg-video');
+
+const videos = [
+  "bg1.mp4",
+  "bg2.mp4",
+  "bg3.mp4"
+];
+
 let bgIndex = 0;
 
-document.getElementById('bg-toggle').addEventListener('click', () => {
-  bgIndex = (bgIndex + 1) % backgrounds.length;
-  source.src = backgrounds[bgIndex];
-  bgVideo.load(); 
-  bgVideo.play(); 
+bgBtn.addEventListener('click', () => {
+  bgIndex = (bgIndex + 1) % videos.length;
+  video.src = videos[bgIndex];
+  video.load();
+  video.play().catch(err => {
+    console.error("Không thể play video:", err);
+  });
 });
