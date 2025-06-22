@@ -77,25 +77,3 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Không thể phát video:", err);
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const musicBtn = document.getElementById("play-music-btn");
-  const ytIframe = document.getElementById("yt-playlist");
-
-  const playlistId = "PLsnJOHsVvrji_YI-PbuT-eYBQHOaapriV";
-  const totalVideos = 40;
-
-  let isPlaying = false;
-
-  musicBtn.addEventListener("click", () => {
-    if (isPlaying) {
-      ytIframe.src = "";
-      musicBtn.innerText = "🎵";
-    } else {
-      const randomIndex = Math.floor(Math.random() * totalVideos);
-      ytIframe.src = `https://www.youtube.com/embed/videoseries?list=${playlistId}&index=${randomIndex}&autoplay=1&loop=1&playlist=${playlistId}`;
-      musicBtn.innerText = "🎶";
-    }
-
-    isPlaying = !isPlaying;
-  });
-});
