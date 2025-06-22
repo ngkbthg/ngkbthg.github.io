@@ -44,6 +44,7 @@ const video = document.getElementById('bg-video');
 
 const videos = [
   "bg/bg.mp4",
+  "bg/bg1.mp4",
   "bg/bg2.mp4"
 ];
 
