@@ -98,7 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     isPlaying = !isPlaying;
   });
-});
 
 audio.addEventListener("ended", () => {
     if (isPlaying) {
