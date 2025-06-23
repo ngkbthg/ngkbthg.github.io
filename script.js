@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("bg-music");
   const btn = document.getElementById("music-btn");
+  const icon = btn.querySelector(".material-icons");
 
   const totalTracks = 40;
   let isPlaying = false;
@@ -90,23 +91,22 @@ document.addEventListener("DOMContentLoaded", () => {
     audio.src = `music/${randomIndex}.mp3`;
     audio.play();
   }
+
   btn.addEventListener("click", () => {
     if (isPlaying) {
       audio.pause();
-      btn.innerText = "🎵";
+      icon.innerText = "music_off"; 
     } else {
-      const randomIndex = Math.floor(Math.random() * totalTracks) + 1;
-      audio.src = `music/${randomIndex}.mp3`;
-      audio.play();
-      btn.innerText = "🎶";
+      playRandomTrack();
+      icon.innerText = "music_note"; 
     }
 
     isPlaying = !isPlaying;
   });
 
-audio.addEventListener("ended", () => {
+  audio.addEventListener("ended", () => {
     if (isPlaying) {
-      playRandomTrack();
+      playRandomTrack(); 
     }
   });
 });
