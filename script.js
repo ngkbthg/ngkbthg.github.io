@@ -85,6 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalTracks = 40;
   let isPlaying = false;
 
+  function playRandomTrack() {
+    const randomIndex = Math.floor(Math.random() * totalTracks) + 1;
+    audio.src = `music/${randomIndex}.mp3`;
+    audio.play();
+  }
   btn.addEventListener("click", () => {
     if (isPlaying) {
       audio.pause();
