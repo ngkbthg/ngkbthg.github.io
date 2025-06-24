@@ -110,3 +110,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+function typeLine(element, text, speed, callback) {
+  let i = 0;
+  function typing() {
+    if (i <= text.length) {
+      element.textContent = text.slice(0, i);
+      i++;
+      setTimeout(typing, speed);
+    } else {
+      callback && callback();
+    }
+  }
+  typing();
+}
+
+function typeAllLines() {
+  const lines = document.querySelectorAll('.typewriter');
+  let index = 0;
+
+  function nextLine() {
+    if (index < lines.length) {
+      const el = lines[index];
+      const txt = el.getAttribute('data-text');
+      typeLine(el, txt, 5, () => {
+        index++;
+        nextLine();
+      });
+    }
+  }
+
+  nextLine();
+}
+
+window.addEventListener("load", () => {
+  const wrapper = document.querySelector(".center-wrapper");
+  wrapper.classList.remove("hidden");
+  wrapper.classList.add("visible");
+  document.body.classList.add("visible");
+
+  typeAllLines();
+});
