@@ -151,3 +151,33 @@ window.addEventListener("load", () => {
 
   typeAllLines();
 });
+
+window.addEventListener("load", () => {
+  const bgVideo = document.getElementById("bg-video");
+  const darkmodeBtn = document.getElementById("darkmode");
+  const icon = document.getElementById("bg-icon");
+
+  // Mặc định là bật
+  const bgEnabled = localStorage.getItem("bgEnabled");
+
+  if (bgEnabled === "false") {
+    bgVideo.style.display = "none";
+    icon.textContent = "dark_mode";
+  } else {
+    bgVideo.style.display = "block";
+    icon.textContent = "light_mode";
+  }
+
+  darkmodeBtn.addEventListener("click", () => {
+    const isVisible = bgVideo.style.display === "block";
+    if (isVisible) {
+      bgVideo.style.display = "none";
+      icon.textContent = "dark_mode";
+      localStorage.setItem("bgEnabled", "false");
+    } else {
+      bgVideo.style.display = "block";
+      icon.textContent = "light_mode";
+      localStorage.setItem("bgEnabled", "true");
+    }
+  });
+});
