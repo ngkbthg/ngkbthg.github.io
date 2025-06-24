@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      visibility: visible;
+    }
+    body.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .about-card {
+      background: rgba(0, 0, 0, 0);
+      backdrop-filter: blur(10px);
+      padding: 10px;
+      border-radius: 0px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+      color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0);
+      animation: fadeIn 0.6s ease forwards;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    .about-card h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .about-card p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .about-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: normal;
+    }
+
+    .about-card a:hover {
+      color: #ffffff;
+      text-decoration: underline
+    }
+
+    .center-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Clock -->
+  <div id="datetime-box">
+    <div id="date"></div>
+    <div id="clock"></div>
+  </div>
+
+  <!-- Background video -->
+  <video autoplay muted loop playsinline preload="auto" id="bg-video"
+    style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1;">
+    <source src="bg/bg1.mp4" type="video/mp4">
+  </video>
+
+  <!-- Buttons -->
+  <button id="music-btn" class="icon-btn" style="position: fixed; top: 20px; right: 20px;">
+    <span class="material-icons">music_off</span>
+  </button>
+  <button id="toggle-bg" class="icon-btn" style="position: fixed; top: 20px; right: 100px;">
+    <span class="material-icons">image</span>
+  </button>
+  <button onclick="alert('m gay')" class="icon-btn" style="position: fixed; top: 20px; right: 180px;">
+    <span class="material-icons">chat</span>
+  </button>
+
+  <!-- Audio -->
+  <audio id="bg-music" preload="auto"></audio>
+
+  <!-- About Content -->
+  <div class="center-wrapper">
+    <div class="about-card">
+      <h1>About Me</h1>
+      <p>
+        Tên: Tiến Đức<br>
+        Tên khác: ngkbthg, ducyeungotband (2 cái tên này dùng ở hầu hết các trang web, game,...)<br>
+        Ngày sinh: xx/xx/2010<br>
+        Tôi dành phần lớn thời gian để xem Youtube kể cả là cho vui hay để học<br>
+        Tôi cũng dành phần lớn thời gian doom scrolling Facebook (đang cố thay đổi)<br>
+        Ngoài ra tôi dùng Messenger để nhắn tin với bạn bè cả trên mạng và ngoài đời<br>
+        Bạn hoàn toàn có thể tìm tôi bằng 2 nickname trên ở các trang mxh vì tôi cố tạo nó đặc biệt và độc nhất, nên kết quả đầu tiên hiện ra phải là tôi (hoặc cái thứ 2)<br>
+        Game: Terraria, Minecraft, Stadew Valley, DDLC, MiSide, Baldi's Basics,...<br>
+        Mục tiêu: Tiền và thật nhiều tiền, tôi thích tiền<br>
+        Thấy lỗi? Nhắn cho tôi. <br>
+        Email: ngkbthg@duck.com
+      </p>
+      <a href="index.html">Back</a>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js" defer></script>
+  <script>
+    window.addEventListener("load", () => {
+      const wrapper = document.querySelector(".center-wrapper");
+      wrapper.classList.remove("hidden");
+      wrapper.classList.add("visible");
+      document.body.classList.add("visible");
+    });
+  </script>
+</body>
+</html>
