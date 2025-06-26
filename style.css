@@ -23,8 +23,14 @@ p {
   font-size: 18px;
 }
 
-.home-about-link:hover {
-  text-decoration: underline
+.home-about-link a {
+  color: white;
+  text-decoration: none;
+}
+
+.home-about-link a:hover {
+  text-decoration: underline;
+
 }
 
 button:not(.icon-btn) {
@@ -244,3 +250,11 @@ my-gif {
   display: none; 
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
