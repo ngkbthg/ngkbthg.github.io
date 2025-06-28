@@ -181,3 +181,11 @@ window.addEventListener("load", () => {
     }
   });
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("add-neko").addEventListener("click", () => {
+    const x = Math.random() * window.innerWidth * 0.8;
+    const y = Math.random() * window.innerHeight * 0.8;
+    new Neko(x, y, true);
+  });
+});
