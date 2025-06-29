@@ -384,16 +384,25 @@ function nekoChooseIdle() {
   this.SetBehavior(e[t]);
 }
 function startANeko() {
-  var e = 0,
-    t = 0;
-  window.startNekoX && (e = window.startNekoX),
-    window.startNekoY && (t = window.startNekoY),
+  var e = 0, t = 0;
+  var target = document.getElementById("gif");
+
+  if (target) {
+    var rect = target.getBoundingClientRect();
+    e = rect.left + window.scrollX + rect.width / 2 - 16;
+    t = rect.top + window.scrollY -28;
+  } else {
+    window.startNekoX && (e = window.startNekoX);
+    window.startNekoY && (t = window.startNekoY);
+
     parseInt(e) != e &&
       (window.onresize = function () {
         for (var e = 0; e < aNekos.length; e++)
           aNekos[e].homeXfn && aNekos[e].findHome();
       });
-  new Neko(e, t, true);
+  }
+
+  new Neko(e, t, false);
   window.onloadOriginal();
 }
 function mouse() {

@@ -1,23 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById('toggle-music');
-  const audio = document.getElementById('bg-music');
-  let isPlaying = false;
 
-  btn.addEventListener('click', async () => {
-    try {
-      if (isPlaying) {
-        audio.pause();
-        btn.textContent = '🎵';
-      } else {
-        await audio.play();
-        btn.textContent = '🎶';
-      }
-      isPlaying = !isPlaying;
-    } catch (e) {
-      console.error("Không thể phát nhạc:", e);
-    }
-  });
-});
 function updateClock() {
   const now = new Date();
   const date = now.toLocaleDateString("vi-VN", {
@@ -182,10 +163,15 @@ window.addEventListener("load", () => {
   });
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("add-neko").addEventListener("click", () => {
-    const x = Math.random() * window.innerWidth * 0.8;
-    const y = Math.random() * window.innerHeight * 0.8;
-    new Neko(x, y, false);
-  });
-});
+function spawnNeko() {
+  const nekoSize = 32;
+  const topSafeMargin = Math.abs(document.documentElement.getBoundingClientRect().top);
+
+  const x = Math.random() * (window.innerWidth - nekoSize);
+  const y = topSafeMargin + Math.random() * (window.innerHeight - nekoSize - topSafeMargin);
+
+  new Neko(x, y, false); 
+}
+
+document.getElementById("add-neko")?.addEventListener("click", spawnNeko);
+
