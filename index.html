@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>Tien Duc</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+ <div id="datetime-box">
+   <div id="date"></div>
+   <div id="clock"></div>
+ </div>
+ <video autoplay muted loop playsinline preload="auto" id="bg-video" style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1;">
+  <source src="" type="video/mp4">
+ </video>
+ <div class="content">
+  <div class="main-card">
+   <img id="gif" src="1.gif" width="200" />
+   <h1>Welcome to my website</h1>
+   <p class="home-about-link">
+     <a href="about.html">About</a> |
+     <a href="aboutme.html">About me</a> |
+     <a href="tohru.html">Tohru</a> 
+   </p>
+   <script src="script.js" defer></script>
+  </div>
+ </div>
+ <button id="toggle-bg" class="icon-btn" style="position: fixed; top: 20px; right: 100px;">
+  <span class="material-icons">image</span>
+ </button>
+ <button onclick="alert('whoever reads this is gay')" class="icon-btn" style="position: fixed; top: 20px; right: 260px;">
+  <span class="material-icons">chat</span>
+ </button>
+ <audio id="bg-music" preload="auto"></audio>
+
+ <button id="music-btn" class="icon-btn" style="position: fixed; top: 20px; right: 20px;">
+  <span class="material-icons">music_off</span>
+ </button>
+ <button id="darkmode" class="icon-btn" style="position: fixed; top: 20px; right: 180px;">
+  <span class="material-icons" id="bg-icon">light_mode</span>
+ </button>
+ <button id="add-neko" class="icon-btn" style="position: fixed; top: 20px; right: 340px;">
+  <span class="material-icons">pets</span>
+ </button>
+ <canvas id="visualizer"></canvas>
+ <script>
+   window.NekoType = "valentine";
+ </script>
+ <script src="neko.js"></script>
+ 
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const img = document.createElement("img");
+    img.src = "https://count.getloli.com/@tao?name=tao&theme=booru-lewd&padding=8&offset=0&align=center&scale=1.5&pixelated=1&darkmode=0";
+    img.alt = "Visitor Count";
+    document.body.appendChild(img);
+  });
+ </script>
+
+</body>
+</html>

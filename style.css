@@ -1,0 +1,269 @@
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.content {
+  text-align: center;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+p {
+  font-size: 18px;
+}
+
+.home-about-link a {
+  color: white;
+  text-decoration: none;
+}
+
+.home-about-link a:hover {
+  text-decoration: underline;
+
+}
+
+button:not(.icon-btn) {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  background-color: transparent;
+  color: #ffffff;
+  border: 0.5px solid rgba(255, 255, 255, 1);
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: none;
+}
+
+button:not(.icon-btn):hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+#datetime-box {
+  position: fixed;
+  top: 20px;
+  left: 20px; 
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+  z-index: 999;
+  text-align: left;
+}
+
+#date {
+  font-size: 30px;
+  opacity: 1;
+}
+
+#clock {
+  font-size: 46px;
+  font-weight: 300;
+  opacity: 1;
+  margin-top: 2px;
+}
+
+.icon-btn {
+  width: 65px;
+  height: 48px;
+  background-color: transparent;
+  border: 0.5px solid rgba(255, 255, 255, 1);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: 
+  backdrop-filter 0.3s ease,
+  background-color 0.3s ease,
+  transform 0.2s ease;
+  padding: 0;
+}
+
+.icon-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: scale(1.2);
+}
+
+.icon-btn .material-icons {
+  font-size: 24px;
+  line-height: 1;
+  pointer-events: none; 
+}
+
+my-gif {
+  width: 200px;
+  height: 200px;  
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none; 
+}
+
+.center-wrapper {
+  display: none;
+}
+
+.center-wrapper.visible {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); 
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0; 
+
+}
+
+.about-card:hover::before {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.about-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.main-card {
+  position: relative;
+  padding: 40px 60px;
+  border-radius: 0px;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-block;
+}
+
+.main-card::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.main-card:hover::before {
+  opacity: 1;
+}
+
+.main-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.typewriter-container {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.typewriter {
+  text-align: center;
+  white-space: pre-wrap;
+  font-size: 18px;
+  line-height: 1.4;
+  font-family: 'Roboto Mono', monospace;
+  margin: 4px 0;
+}
+
+.center-wrapper.visible {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about-card {
+  background: rgba(0, 0, 0, 0);
+  padding: 24px;
+  border-radius: 0px;
+  width: 90vw;
+  max-width: 600px;
+  max-height: 70vh;
+  box-shadow: 0 0 10px rgba(0,0,0,0);
+  position: relative;
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.scrollable {
+  max-height: 100%;
+  overflow-y: auto;
+  padding-right: 8px;
+  text-align: center;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none; 
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#visualizer {
+  background: transparent; 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  z-index: 0;
+  pointer-events: none; 
+  transition: opacity 0.6s ease;
+}

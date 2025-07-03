@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      visibility: visible;
+    }
+    body.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .about-card h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .about-card p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .about-card a {
+      display: inline-block;
+      font-size: 24px;
+      margin-top: 10px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: normal;
+    }
+
+    .about-card a:hover {
+      color: #ffffff;
+      text-decoration: underline
+    }
+
+    .center-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Clock -->
+  <div id="datetime-box">
+    <div id="date"></div>
+    <div id="clock"></div>
+  </div>
+
+  <!-- Background video -->
+  <video autoplay muted loop playsinline preload="auto" id="bg-video"
+    style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1;">
+    <source src="bg/bg1.mp4" type="video/mp4">
+  </video>
+
+  <!-- Buttons -->
+  <button id="music-btn" class="icon-btn" style="position: fixed; top: 20px; right: 20px;">
+    <span class="material-icons">music_off</span>
+  </button>
+  <button id="toggle-bg" class="icon-btn" style="position: fixed; top: 20px; right: 100px;">
+    <span class="material-icons">image</span>
+  </button>
+  <button onclick="alert('whoever reads this is gay')" class="icon-btn" style="position: fixed; top: 20px; right: 260px;">
+    <span class="material-icons">chat</span>
+  </button>
+  <button id="darkmode" class="icon-btn" style="position: fixed; top: 20px; right: 180px;">
+    <span class="material-icons" id="bg-icon">light_mode</span>
+  </button>
+  <button id="add-neko" class="icon-btn" style="position: fixed; top: 20px; right: 340px;">
+    <span class="material-icons">pets</span>
+  </button>
+  <!-- Audio -->
+  <audio id="bg-music" preload="auto"></audio>
+
+  <!-- About Content -->
+  <div class="center-wrapper">
+    <div class="about-card">
+     <div class="scrollable">
+      <h1>About Me</h1>
+      <div class="typewriter-container">
+       <p class="typewriter" data-text="Tên: Tiến Đức"></p>
+       <p class="typewriter" data-text="Youtube: @ngkbthg"></p>
+       <p class="typewriter" data-text="Facebook: @ngkbthg"></p>
+       <p class="typewriter" data-text="X: @ducyeungotband"></p>
+       <p class="typewriter" data-text="Tiktok: @ngkbthg (đã bỏ tiktok)"></p>
+       <p class="typewriter" data-text="Discord: @ducyeungotband"></p>
+       <p class="typewriter" data-text="Github: @ngkbthg"></p>
+       <p class="typewriter" data-text="Game: Terraria, Minecraft, Stardew Valley, DDLC, MiSide, Baldi's Basics,..."></p>
+       <p class="typewriter" data-text="Thấy lỗi? Nhắn cho tôi (ưu tiên Discord)"></p>
+       <p class="typewriter" data-text="Email: ngkbthg@duck.com"></p>
+      </div>
+      <a href="index.html">Back</a>
+     </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js" defer></script>
+  <script>
+    window.addEventListener("load", () => {
+      const wrapper = document.querySelector(".center-wrapper");
+      wrapper.classList.remove("hidden");
+      wrapper.classList.add("visible");
+      document.body.classList.add("visible");
+    });
+  </script>
+  
+ <script>
+   NekoType = "valentine"; 
+ </script>
+ <script src="neko.js"></script>
+</body>
+</html>
