@@ -9,6 +9,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  cursor: url('https://play.vsthemes.org/t-cursors/72009/6662c8caa21dd049d5bcb85a88623b73.webp') 0 0, auto;
 }
 
 .content {
@@ -266,4 +267,9 @@ a:hover {
   z-index: 0;
   pointer-events: none; 
   transition: opacity 0.6s ease;
+}
+
+a, button, input, textarea, select, label, summary,
+[role="button"], [role="link"] {
+  cursor: inherit !important;
 }
