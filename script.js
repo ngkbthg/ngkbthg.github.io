@@ -29,7 +29,7 @@ function handleCommand(cmd) {
 - help: show this message
 - about: about this website
 - about-me: about me
-- fetch: your informations, yes, YOUR!!
+- fetch: your informations, yes, YOUR!! (work like dog shit on firefox)
 - set-theme: change theme (mono, light, hack)
 - matrix: hiển thị mấy cái kí tự ngầu như hacker để sĩ gái (ấn ESC để thoát)
 - clear: delete all trash you've made
@@ -38,7 +38,7 @@ function handleCommand(cmd) {
   if (trimmed === "exit") {
     return `Alt + F4 bro 💔💔🥀🥀`;
   }
-  if (trimmed === "fetch") {
+/*  if (trimmed === "fetch") {
     var xhr = new XMLHttpRequest();
   xhr.open("GET", "https://api.ipify.org?format=json", false); // false = đồng bộ
   xhr.send(null);
@@ -53,7 +53,47 @@ function handleCommand(cmd) {
       screen: `${screen.width}x${screen.height}`,
       window: `${innerWidth}x${innerHeight}`
   }, null, 2).slice(1,-1);
+}*/
+if (trimmed === "fetch") {
+  // Lấy IP đồng bộ
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://api.ipify.org?format=json", false);
+  xhr.send(null);
+  var ip = JSON.parse(xhr.responseText).ip;
+
+  // Lấy GPU info qua WebGL
+  let gpu = "Unknown";
+  try {
+    const canvas = document.createElement("canvas");
+    const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    if (gl) {
+      const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+      if (debugInfo) {
+        gpu = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+      }
+    }
+  } catch(e) {}
+
+  // Lấy thông tin mạng (nếu trình duyệt hỗ trợ)
+  let netInfo = "Unknown";
+  if (navigator.connection) {
+    netInfo = `${navigator.connection.effectiveType} (${navigator.connection.downlink} Mbps)`;
+  }
+
+  return `
+IP: ${ip}
+UA: ${navigator.userAgent}
+Lang: ${navigator.language}
+RAM: ${navigator.deviceMemory ? navigator.deviceMemory + " GB" : "Unknown"}
+CPU: ${navigator.hardwareConcurrency ? navigator.hardwareConcurrency + " threads" : "Unknown"}
+GPU: ${gpu}
+Time Zone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}
+Screen: ${screen.width}x${screen.height}
+Window: ${innerWidth}x${innerHeight}
+Network: ${netInfo}
+`;
 }
+
   if (trimmed === "about") {
     return `Xin chào mấy con người thất nghiệp đã đến với website của tôi, web này không dùng cho mục đích gì ngoài để cho tôi đem đi sĩ và tốn thời gian của các người, hết rồi `;
   }
