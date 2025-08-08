@@ -29,10 +29,31 @@ function handleCommand(cmd) {
 - help: show this message
 - about: about this website
 - about-me: about me
+- fetch: your informations, yes, YOUR!!
 - set-theme: change theme (mono, light, hack)
 - matrix: hiển thị mấy cái kí tự ngầu như hacker để sĩ gái (ấn ESC để thoát)
-- clear: delete all trash you've made`;
+- clear: delete all trash you've made
+- exit: you cannot exit with this command`;
   }
+  if (trimmed === "exit") {
+    return `Alt + F4 bro 💔💔🥀🥀`;
+  }
+  if (trimmed === "fetch") {
+    var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://api.ipify.org?format=json", false); // false = đồng bộ
+  xhr.send(null);
+    var ip = JSON.parse(xhr.responseText).ip;
+    return JSON.stringify({
+      ip: ip,
+      ua: navigator.userAgent,
+      lang: navigator.language,
+      ram: navigator.deviceMemory + " GB",
+      cpu: navigator.hardwareConcurrency + " threads",
+      tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      screen: `${screen.width}x${screen.height}`,
+      window: `${innerWidth}x${innerHeight}`
+  }, null, 2).slice(1,-1);
+}
   if (trimmed === "about") {
     return `Xin chào mấy con người thất nghiệp đã đến với website của tôi, web này không dùng cho mục đích gì ngoài để cho tôi đem đi sĩ và tốn thời gian của các người, hết rồi `;
   }
